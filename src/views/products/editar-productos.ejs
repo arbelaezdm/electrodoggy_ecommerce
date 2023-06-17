@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- ======== HEAD =================== -->
+  <%- include('../partials/head.ejs') %>
+
+  <body>
+    <!-- ===== HEADER  ================= -->
+
+    <%- include('../partials/header.ejs') %>
+
+    <!-- ===== PRODUCTS EDIT  ================= -->
+
+    <div class="rg-rg-register-form-container cp-editar-form-contenedor">
+      <h3 class="rg-register-label">Editar producto</h3>
+      <div class="rg-register-form cp-editarProducto">
+        <form
+          action="/product/editar-productos/<%= producto.id %>?_method=PUT"
+          method="POST"
+          name="rg-register-form"
+          class="rg-register-form cp-editarProducto"
+          enctype="multipart/form-data"
+        >
+
+        
+
+          <div class="cp-detallesProducto">
+            <h3 class="cp-tituloSeccion">Marca</h3>
+            <label for="brand"></label>
+          <select name="brand" class="rg-form-input-text <%= locals.errors && errors.brand ? 'is-invalid' : null %>">
+            <option value="">Selecione una Marca</option>
+
+            <% for( let i = 0; i < categories.length; i++ ) { %>
+              <% if (categories[i].id == producto.categoriesBrands_id) { %>
+               <option value="<%= categories[i].id %> " selected>
+                <%= categories[i].name %> 
+              <% } else { %>
+                <option value="<%= categories[i].id %>">
+                  <%= categories[i].name %> 
+            </option>
+            
+            <% } %>
+
+            <% } %>
+
+           </select>
+           <% if (locals.errors && errors.brand) { %>
+            <div class="register-errors">
+              <%= errors.brand.msg %> 
+            </div>
+          <% } %>
+
+           <div class="cp-editarImagen">
+            <label for="imagenProducto" class="cp-tituloSeccion"
+              >Imagen del producto</label
+            >
+            <img
+              class="cp-subirImagen"
+              src="/images/productos/<%= producto.image %>"
+              alt=""
+            />
+            
+            <input
+              id="imagenProducto"
+              type="file"
+              name="image"
+              accept="jpg, png, jpeg"
+              class="rg-form-input-text subirArchivo <%= locals.errors && errors.image ? 'is-invalid' : null %> "
+              value="<%= producto.image %>"
+              multiple
+            />
+            <% if (locals.errors && errors.image) { %>
+              <div class="register-errors">
+                <%= errors.image.msg %> 
+              </div>
+            <% } %>
+          </div>
+
+            <h3 class="cp-tituloSeccion">Nombre</h3>
+            <input
+              type="text"
+              value="<%= producto.name %>"
+              name="name"
+              class="rg-form-input-text  <%= locals.errors && errors.name ? 'is-invalid' : null %> "
+            />
+            <% if (locals.errors && errors.name) { %>
+              <div class="register-errors">
+                <%= errors.name.msg %> 
+              </div>
+            <% } %>
+            <h3 class="cp-tituloSeccion">Precio Regular</h3>
+            <input
+              type="number"
+              value="<%= producto.regularPrice %>"
+              name="regularPrice"
+              class="rg-form-input-text <%= locals.errors && errors.regularPrice ? 'is-invalid' : null %> "/>
+            <% if (locals.errors && errors.regularPrice) { %>
+              <div class="register-errors">
+                <%= errors.regularPrice.msg %> 
+              </div>
+            <% } %>
+            <h3 class="cp-tituloSeccion">Descuento</h3>
+            <input
+              type="number"
+              value="<%= producto.discount %>"
+              name="discount"
+              class="rg-form-input-text"
+            />
+            <h3 class="cp-tituloSeccion">Precio de Oferta</h3>
+            <input
+              type="number"
+              value="<%= producto.offerPrice %>"
+              name="offerPrice"
+              class="rg-form-input-text"
+            />
+
+            <h3 class="cp-tituloSeccion">Colores</h3>
+            <div class="cp-chekboxColores">
+              <label for="colores">
+                <select name="colores" class="rg-form-input-text <%= locals.errors && errors.colores ? 'is-invalid' : null %>" >
+                  <option value="">Seleccione un Color</option>
+                  
+                 <% for( let i = 0; i < colors.length; i++ ) { %>
+
+                  <% if (colors[i].id == producto.categoriesColors_id) { %>
+                    <option value="<%= colors[i].id %>" selected>
+                      <%= colors[i].name %> 
+                  </option>
+                  <% } else { %>
+
+                   <option value="<%= colors[i].id %> ">
+                       <%= colors[i].name %> 
+                   </option>
+                   <% } %>
+                   <% } %>
+                </select> 
+                <% if (locals.errors && errors.colores) { %>
+                  <div class="register-errors">
+                    <%= errors.colores.msg %> 
+                  </div>
+                <% } %>
+            </div>
+
+            <label
+              for="especificaciones"
+              class="cp-tituloSeccion"
+              value="specification"
+            >
+              Especificaciones:</label
+            ><textarea name="specification" id="especificaciones" class="cp-textAreaInput <%= locals.errors && errors.specification ? 'is-invalid' : null %>"><%= producto.specification %></textarea>
+            <% if (locals.errors && errors.specification) { %>
+              <div class="register-errors">
+                <%= errors.specification.msg %> 
+              </div>
+            <% } %>
+
+            <label for="descripcion" class="cp-tituloSeccion">
+              Descripción:</label
+            ><textarea name="description" id="descripcion" class="cp-textAreaInput <%= locals.errors && errors.description ? 'is-invalid' : null %> "><%= producto.description %></textarea>
+            <% if (locals.errors && errors.description) { %>
+          <div class="register-errors">
+            <%= errors.description.msg %> 
+          </div>
+        <% } %>
+            <h3 class="cp-tituloSeccion">Stock</h3>
+
+            <input
+              type="number"
+              value="<%= producto.stock %>"
+              name="stock"
+              class="rg-form-input-text <%= locals.errors && errors.stock ? 'is-invalid' : null %>"
+            />
+            <% if (locals.errors && errors.stock) { %>
+              <div class="register-errors">
+                <%= errors.stock.msg %> 
+              </div>
+            <% } %>
+
+            <h3 class="cp-tituloSeccion">Categorias</h3>
+            <div class="cp-contenedorSelectorCategoria">
+              <select name="category" id="" class="cp-selectorCategoria <%= locals.errors && errors.category ? 'is-invalid' : null %>">
+                <option value="">Seleccione una Categoria</option>
+
+                <% for( let i = 0; i < categoryProduct.length; i++ ) { %>
+                  <% if (categoryProduct[i].id == producto.categoriesProductos_id) { %>
+
+                    <option value="<%= categoryProduct[i].id %>" selected>
+                      <%= categoryProduct[i].name %> 
+                  </option>
+
+                  <% } else { %>
+                  <option value="<%= categoryProduct[i].id %> ">
+                      <%= categoryProduct[i].name %> 
+                  </option>
+                  <% } %>
+                  <% } %>
+
+              </select>
+              <% if (locals.errors && errors.category) { %>
+                <div class="register-errors">
+                  <%= errors.category.msg %> 
+                </div>
+              <% } %>
+            </div>
+            <br />
+            <br />
+            <button type="submit" class="rg-register-form-button ">
+              Editar
+            </button>
+
+            <a href="/" class="rg-register-form-button rg-cancelar-button">Cancelar</a>
+          </div>
+        </form>
+
+        <form
+          action="/product/editar-productos/<%= producto.id %>?_method=DELETE"
+          method="POST"
+          class="rg-register-form cp-editarProducto cp-delete-form"
+          enctype="multipart/form-data"
+        >
+          <button type="submit" class="rg-register-form-button cp-delete-button">Borrar</button>
+        </form>
+      </div>
+
+      <!-- ==== DELETE BUTTON ==== -->
+    </div>
+
+   <!-- ======= FOOTER  ====== -->
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

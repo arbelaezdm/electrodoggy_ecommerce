@@ -1,0 +1,26 @@
+.totals{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Breakpoints */
+
+    /* Tablets */
+
+    @media(min-width:769px){
+        .totals{
+            flex-direction: row;
+            justify-content: space-between;
+            /*margin-left: 19rem;*/
+        }
+      }
+
+    
+    /* Desktop */
+
+@media(min-width:1279px){
+    .totals{
+        width: 66rem;
+    }
+    }

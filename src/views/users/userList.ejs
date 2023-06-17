@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- ======== HEAD =================== -->
+  <%- include('../partials/head.ejs') %>
+  <body>
+    <!-- ===== HEADER  ================= -->
+    <%- include('../partials/header.ejs') %>
+
+    <section class="home-todo-vitrinas">
+      <div class="home-titulo">
+        <h4>Listado de Usuarios</h4>
+      </div>
+
+      <div class="home-vitrinas lp-productos">
+        <% usuarios.forEach(function(usuario){ %>
+
+        <article class="home-producto-vitrinas lp-card-producto">
+          <a href="/user/editar-usuario/<%= usuario.id %>" class="user-link">
+            <img
+              src="/images/users/<%= usuario.userImage %>"
+              class="home-imagenes-vitrinas lp-imagen-producto"
+            />
+            <div class="user-list">
+              <p class="user-field">Nombre:</p>
+              <p class="user-value">
+                <%= usuario.firstName %> <%= usuario.lastName %>
+              </p>
+              <p class="user-field">Email:</p>
+              <p class="user-value"><%= usuario.email %></p>
+              <p class="user-field">Fecha de Nacimiento:</p>
+              <p class="user-value"><%= usuario.dateBirth %></p>
+              <p class="user-field">Tipo de Usuario</p>
+              <% if (usuario.categoriaUsuario) { %>
+              <p class="user-value"><%= usuario.categoriaUsuario.nombre %></p>
+              <% } %>
+            </div>
+          </a>
+        </article>
+        <% }) %>
+      </div>
+    </section>
+
+    <!-- ======= FOOTER  ====== -->
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

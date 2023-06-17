@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- ======== HEAD =================== -->
+  <%- include('../partials/head.ejs') %>
+
+  <body>
+    <!-- ===== START OF HEADER  ====== -->
+    <%- include('../partials/header.ejs') %>
+    <!-- ===== END OF HEADER ====== -->
+
+    <div class="user-profile">
+      <br />
+      <h2>Bienvenido a Electrodoggy</h2>
+      <br />
+      <h3 id="user-name"><%= user.firstName %> <%= user.lastName %></h3>
+      <div class="div-user-profile-image">
+        <img
+          src="/images/users/<%= user.userImage %>"
+          class="user-profile-image"
+        />
+      </div>
+
+      <h3 >Email</h3>
+      <h3 class="profile-titles"><%= user.email %></h3>
+      <h3 >Tipo de Usuario</h3>
+      <h3 class="profile-titles"><%= user.categoriaUsuario.nombre %></h3>
+      <div class="container-profile-buttons">
+        <% if (user.categoriaUsuario.nombre == "Admin") { %>
+        <div class="user-listButton">
+          <a href="/user/users"
+            ><button id="userList">Listado Usuarios</button></a
+          >
+        </div>
+        <a href="/user/editar-usuario/<%= user.id %> "
+          ><button class="user-editButton">Editar Usuario</button></a
+        >
+        <% }else { %>
+        <a href="/user/editar-usuario/<%= user.id %> "
+          ><button class="user-editButton">Editar Usuario</button></a
+        >
+        <% } %>
+      </div>
+    </div>
+
+    <!-- ======= START OF FOOTER  ====== -->
+
+    <%- include('../partials/footer.ejs') %>
+
+    <!-- ===== END OF FOOTER  ====== -->
+  </body>
+</html>

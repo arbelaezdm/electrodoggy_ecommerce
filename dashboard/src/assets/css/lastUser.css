@@ -1,0 +1,62 @@
+.lastUser{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow:1px 6px 14px #E6E7EC;
+    width: 21rem;
+}
+
+.lastUser h2 {
+    padding-left: 2rem;
+    color: #414AF2;
+}
+
+.lastUser h3 {
+    padding-left: 2rem;
+    color: #040740;
+}
+
+.lastUser h4 {
+    padding-left: 2rem;
+    color: #040740;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.button{
+    margin: 1rem 2rem 2rem;
+    background-color: #414AF2;
+    border-radius: 4px;
+    padding: 0;
+    width: auto;
+    height: 36px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding-block: 0.5rem;
+}
+
+.usuario{
+    font-family: poppins;
+    font-size: 14px;
+    color: white;
+    margin: 4rem 2rem;
+    align-items: center;
+    
+}
+
+/* Breakpoints */
+
+    /* Tablets */
+
+    @media(min-width:769px){
+
+        .lastUser{
+            width: 48%;
+        }
+
+      }

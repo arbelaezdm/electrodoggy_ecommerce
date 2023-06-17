@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ======== HEAD =================== -->
+<%- include('../partials/head.ejs') %>
+
+  <body>
+    <!-- ===== HEADER  ================= -->
+
+    <%- include('../partials/header.ejs') %>
+
+      <!-- ===== USER EDIT  ================= -->
+
+      <div class="rg-rg-register-form-container cp-editar-form-contenedor">
+        <div class="rg-register-form cp-editarProducto">
+          <form action="/user/editar-usuario/<%= usuario.id %>?_method=PUT" method="POST" name="rg-register-form"
+            class="rg-register-form cp-editarProducto" enctype="multipart/form-data" id="edit-user-form">
+
+
+            <div class="cp-detallesProducto">
+              <h3 class="rg-register-label">Editar Usuario</h3>
+
+              <!-- ==================== CATEGORIA ====================== -->
+
+
+              <% if (locals.userAdmin) { %>
+                <label for="categoria" class="cp-tituloSeccion">Categoria</label>
+
+                <select name="categoria" class="rg-form-input-text">
+
+                  <% for( let i=0; i < categoriaUsuario.length; i++ ) { %>
+                    <% if (categoriaUsuario[i].id==usuario.categoriesUsers_id) { %>
+                      <option value="<%= categoriaUsuario[i].id %> " selected>
+                        <%= categoriaUsuario[i].nombre %>
+                          <% } else { %>
+                      <option value="<%= categoriaUsuario[i].id %>">
+                        <%= categoriaUsuario[i].nombre %>
+                      </option>
+
+                      <% } %>
+
+                        <% } %>
+
+                </select>
+                <% } %>
+
+                  <!-- ==================== NOMBRE ====================== -->
+                  <h3 class="cp-tituloSeccion">Nombre</h3>
+                  <input type="text" value="<%= usuario.firstName %>" name="name" class="rg-form-input-text"
+                    id="edit-userName" />
+
+                  <div class="div-errors">
+                    <p class="input-editUser-name-error"></p>
+                  </div>
+
+                  <!-- ==================== APELLIDO ====================== -->
+
+                  <h3 class="cp-tituloSeccion">Apellido</h3>
+                  <input type="text" value="<%= usuario.lastName %>" name="lastName" class="rg-form-input-text"
+                    id="edit-userLastName" />
+
+                  <div class="div-errors">
+                    <p class="input-editUser-lastName-error"></p>
+                  </div>
+
+
+                  <!-- ==================== EMAIL ====================== -->
+
+                  <h3 class="cp-tituloSeccion">Email</h3>
+                  <input type="text" value="<%= usuario.email %>" name="email" class="rg-form-input-text"
+                    id="edit-userEmail" />
+
+                  <div class="div-errors">
+                    <p class="input-editUser-email-error"></p>
+                    <p class="div-email-character-errors"></p>
+                  </div>
+
+
+                  <!-- ==================== CONTRASEÑA ====================== -->
+
+                  <!-- <h3 class="cp-tituloSeccion">Password</h3>
+            <input
+              type="password"
+              name="password"
+              class="rg-form-input-text"
+              id="edit-userPassword"
+            />
+
+            <div class="div-errors">
+              <p class="input-editUser-password-error"></p>
+              <p class="div-password-character-errors"></p>
+              <p class="div-password-matchPassword-errors"></p>
+            </div> -->
+
+
+                  <!-- ==================== CONFIRMAR CONTRASEÑA ====================== -->
+
+                  <!-- <h3 class="cp-tituloSeccion">Confirmar Password</h3>
+            <input 
+            type="password" 
+            name="confirm_password"
+            class="rg-form-input-text" 
+            id="edit-userConfirmPassword"
+            />
+
+            <div class="div-errors">
+              <p class="input-editUser-confirmPassword-error"></p>
+              <p class="div-confirmPassword-character-errors"></p>
+
+            </div> -->
+
+
+                  <!-- ==================== DIRECCION ====================== -->
+                  <h3 class="cp-tituloSeccion">Direccion</h3>
+                  <input type="text" value="<%= usuario.direction %>" name="direction" class="rg-form-input-text" />
+
+
+                  <!-- ==================== FECHA NACIMIENTO ====================== -->
+                  <h3 class="cp-tituloSeccion">Fecha de Nacimiento</h3>
+                  <input type="date" value="<%= usuario.dateBirth %>" name="dateBirth" class="rg-form-input-text" />
+
+
+
+
+                  <!-- ==================== IMAGEN ====================== -->
+                  <div class="cp-editarImagen">
+                    <label class="cp-tituloSeccion">Imagen Usuario</label>
+                    <img class="cp-subirImagen" src="/images/users/<%= usuario.userImage %>" name="userImage" alt="" />
+
+                    <input id="imagenProducto" type="file" name="images" class="rg-form-input-text subirArchivo"
+                      value="<%= usuario.userImage %>" multiple />
+                  </div>
+
+                  <div class="div-errors">
+                    <p class="input-editUser-image-error"></p>
+                  </div>
+
+                  <br />
+                  <br />
+                  <button type="submit" class="rg-register-form-button ">
+                    Editar
+                  </button>
+
+                  <a href="/" class="rg-register-form-button rg-cancelar-button">Cancelar</a>
+          </form>
+
+          <!-- ==== DELETE BUTTON ==== -->
+
+          <form action="/user/borrar/<%= usuario.id %>" method="POST"
+            class="rg-register-form cp-editarProducto cp-delete-form" enctype="multipart/form-data">
+            <button type="submit" class="rg-register-form-button cp-cancelar-button">Borrar</button>
+          </form>
+        </div>
+
+        </form>
+
+        <!-- ======= FOOTER  ====== -->
+        <%- include('../partials/footer.ejs') %>
+  </body>
+
+</html>

@@ -1,0 +1,59 @@
+.lastProduct{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow:1px 6px 14px #E6E7EC;
+    width: 21rem;
+
+}
+
+.textos{
+    display: flex;
+    flex-direction: column;
+}
+
+.textos h2 {
+    padding-left: 2rem;
+    color: #414AF2;
+}
+
+.textos h3 {
+    padding-left: 2rem;
+    color: #040740;
+}
+
+.textos h4 {
+    padding-left: 2rem;
+    color: #040740;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.imgProducto img{
+    width: 100%;
+    border: #E6E7EC solid 1px;
+    border-radius: 4px;
+}
+
+/* Breakpoints */
+
+    /* Tablets */
+
+    @media(min-width:769px){
+        .imgProducto img{
+            width: 100%;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .lastProduct{
+            width: 48%;
+        }
+
+      }

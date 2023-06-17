@@ -1,0 +1,20 @@
+/* Breakpoints */
+
+    /* Tablets */
+
+    @media(min-width:769px){
+        .content{
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-left: 20rem;
+        }
+      }
+
+    
+    /* Desktop */
+
+@media(min-width:1279px){
+    .content{
+        width: 66rem;
+    }
+    }

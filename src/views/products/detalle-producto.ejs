@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- ======== HEAD =================== -->
+  <%- include('../partials/head.ejs') %>
+
+  <body>
+    <!-- ===== START OF HEADER  ====== -->
+
+    <%- include('../partials/header.ejs') %>
+
+    <!-- ===== END OF HEADER ====== -->
+
+    <!-- ===== PRODUCT DETAIL ======= -->
+
+    <main class="dp-main">
+      <div>Inicio > Celulares > <%= product.name %></div>
+      <div class="dp-informacion-producto">
+        <section class="dp-contenedorImagenes">
+          <div class="dp-imagenPrincipal">
+            <img
+              class="dp-imagen-producto"
+              src="/images/productos/<%= product.image %>"
+            />
+          </div>
+        </section>
+        <section class="dp-product-description">
+          <h2 class="dp-modelo" id="product-name"><%= product.name %></h2>
+          <p class="dp-precio-antes"><%= product.offerPrice %></p>
+          <h2 class="dp-precio" id="product-price"><%= product.regularPrice %></h2>
+          <h5 class="dp-colores">Colores disponibles:</h5>
+          <div class="dp-contenedor-colores">
+            <div class="dp-selector-colores"></div>
+            <div class="dp-selector-colores"></div>
+            <div class="dp-selector-colores"></div>
+          </div>
+
+          <div class="dp-selectorCantidades">
+            <button class="dp-selectorCantidades-resta">-</button>
+            <input
+              type="number"
+              class="dp-selectorCantidades-numero"
+              value="1"
+              step="1"
+              id="quantity-shopping-cart"
+            />
+            <button class="dp-selectorCantidades-suma">+</button>
+          </div>
+
+          <button class="dp-añadir-a-carrito" id="add-to-shopping-cart">Añadir al carrito</button>
+          <br />
+          <% if (locals.userAdmin) { %>
+          <a
+            style="text-decoration: none"
+            href="/product/editar-productos/<%= product.id %> "
+          >
+            <button class="dp-añadir-a-carrito">Editar Producto</button>
+          </a>
+          <% } %>
+          <div class="dp-promesa-de-compra">
+            <div class="dp-promesa-de-valor">
+              <div class="dp-iconos-promesa">
+                <i class="fas fa-clock"></i>
+              </div>
+              <p>Entrega en 2 días</p>
+            </div>
+
+            <div class="dp-promesa-de-valor">
+              <div class="dp-iconos-promesa">
+                <i class="fas fa-shipping-fast"></i>
+              </div>
+              <p>Envío gratis</p>
+            </div>
+
+            <div class="dp-promesa-de-valor">
+              <div class="dp-iconos-promesa">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <p>Compra segura</p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="dp-descripcion-detalles">
+        <ul class="dp-especificaciones">
+          <li><a href="#">Descripcion</a></li>
+        </ul>
+        <p class="dp-especificacionTexto"><%= product.description %></p>
+      </section>
+    </main>
+
+    <!-- ======= START OF FOOTER  ====== -->
+
+    <%- include('../partials/footer.ejs') %>
+
+    <!-- ===== END OF FOOTER  ====== -->
+  </body>
+</html>

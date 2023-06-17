@@ -1,0 +1,29 @@
+.last{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+
+/* Breakpoints */
+
+    /* Tablets */
+
+    @media(min-width:769px){
+        .last{
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            /*margin-left: 19rem;*/
+        }
+      }
+
+    
+    /* Desktop */
+
+@media(min-width:1279px){
+    .last{
+        width: 66rem;
+        justify-content: space-between
+    }
+    }

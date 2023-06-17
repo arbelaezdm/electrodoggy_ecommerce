@@ -1,0 +1,60 @@
+.textos-error{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.textos-error h2 {
+    color: #414AF2;
+    font-size: 30px;
+    
+}
+.imageContent{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.button{
+    margin: 1rem 2rem 2rem;
+    background-color: #414AF2;
+    border-radius: 4px;
+    padding: 0;
+    width: auto;
+    height: 36px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding-block: 0.5rem;
+}
+.btn-error{
+    font-family: poppins;
+    font-size: 14px;
+    color: white;
+    margin: 4rem 2rem;
+    align-items: center;
+}
+/* Breakpoints */
+
+    /* Tablets */
+
+    @media(min-width:769px){
+        .imageContent{
+            padding-left: 16rem;
+            padding-top: 20vh;
+        }
+        .imgProducto{
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        
+      }
+
+    
+    /* Desktop */
+
+@media(min-width:1279px){
+    .imgProducto{
+        width: 66rem;
+    }
+    
+    }

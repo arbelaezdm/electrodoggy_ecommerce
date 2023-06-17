@@ -1,0 +1,43 @@
+.paginationContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4rem;
+}
+.page{
+    background-color: #414af2;
+    outline: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.iconArrow{
+    color: white;
+    position:absolute;
+    font-size: 20px;
+    top: 25%;
+    left: 25%;
+    cursor: pointer;
+}
+
+.inputPage{
+    height: 25px;
+    width: 25px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #040740;
+    border-radius: 3px;
+}
+
+button[disabled]{
+    cursor: no-drop;
+}

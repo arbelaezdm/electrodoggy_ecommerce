@@ -1,0 +1,75 @@
+.contentTable{
+  display: flex;
+  flex-direction: column;
+  margin: 0 2rem;
+}
+
+.title{
+  text-align: left;
+  color: #414AF2
+}
+
+
+table {
+    table-layout: fixed;
+    width: auto;
+
+  }
+  
+  .headerTable{
+    display: flex;
+    align-items: flex-start;
+    font-family: poppins;
+    font-size: 14;
+    color: #040740;
+    width: auto;
+  }
+
+  .boddyTable{
+    display: flex;
+    flex-direction: column;
+  }
+
+  th{
+    
+    background-color: #E6E7EC;
+    padding: 1rem;
+    width: 100%;
+
+  }
+
+  td {
+    padding: 20px;
+    border-bottom: #E6E7EC solid 1px;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  tr{
+    display: flex;
+    font-family: poppins;
+    font-size: 11;
+    color: #040740;
+  }
+
+  /* Breakpoints */
+
+    /* Tablets */
+
+    @media(min-width:769px){
+      .title{
+        margin-left: 20rem;
+        margin-top: 2rem;
+      }
+      table{
+          flex-direction: row;
+          justify-content: space-evenly;
+          margin-left: 20rem;
+      }
+      th{
+    
+        margin-right: 2rem;
+      }
+
+
+    }

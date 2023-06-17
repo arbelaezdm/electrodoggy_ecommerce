@@ -1,0 +1,145 @@
+<header class="header">
+  <div class="header-main-bar-container">
+    <!-- <i class="fas fa-bars" id="header-menu-button"></i> -->
+    <!-- <p class="header-electrodoggy-header-text">ElectroDoggy</p> -->
+    <div>
+      <a href="/"><img src="/images/logo.png" /></a>
+    </div>
+    <a href="/user/login">
+      <i class="fas fa-user" id="header-user-button"></i>
+    </a>
+    <a href="/product/carrito-compras">
+      <i class="fas fa-shopping-cart" id="header-shopping-cart-button"></i>
+    </a>
+  </div>
+
+  <div class="header-find-bar-container">
+    <form action="/product/find" method="POST" enctype="multipart/form-data">
+      <input
+        type="text"
+        name="findProduct"
+        placeholder="Buscar productos"
+        class="header-find-products-input"
+      />
+
+      <button
+        type="submit"
+        class="fas fa-search"
+        id="header-movile-find-button"
+      ></button>
+    </form>
+  </div>
+
+  <!-- ====== DESKTOP HEADER ======= -->
+
+  <div class="desktop-header">
+    <div>
+      <a href="/"><img src="/images/logo.png" /></a>
+    </div>
+    <!--<a href="/" style="text-decoration: none"><p>ElectroDoggy</p> </a>-->
+
+    <div>
+      <form
+        action="/product/find"
+        method="POST"
+        class="search-field-products"
+        enctype="multipart/form-data"
+      >
+        <input
+          type="text"
+          name="findProduct"
+          placeholder="Buscar productos"
+          class="header-find-products-input"
+        />
+
+        <button
+          type="submit"
+          id="header-find-icon"
+          class="fas fa-search"
+        ></button>
+      </form>
+    </div>
+
+    <% if(locals.isLogged) {%>
+    <div
+      class="desktop-header-use-profile-container desktop-header-shopping-cart-button"
+    >
+      <div class="desktop-header-use-img-container">
+        <a href="/user/profile"
+          ><img
+            class="desktop-header-use-img"
+            src="/images/users/<%= locals.userLogged.userImage%>"
+        /></a>
+      </div>
+      <p><%= locals.userLogged.firstName %></p>
+    </div>
+
+    <div class="desktop-header-shopping-cart-button">
+      <a href="/user/logout"
+        ><i
+          class="fa-solid fa-right-from-bracket"
+          id="header-shopping-cart-button"
+        ></i
+      ></a>
+      <p>Salir</p>
+    </div>
+
+    <% if (locals.userAdmin) { %>
+    <div class="desktop-header-shopping-cart-button">
+      <a href="/product/crear-productos"
+        ><i class="fas fa-folder-plus" id="header-shopping-cart-button"></i
+      ></a>
+      <p>Crear Producto</p>
+    </div>
+    <% } %>
+
+    <!-- IF LOCALS.ISLOGGED IS FALSE -->
+
+    <% }else {%>
+    <div class="desktop-header-user-button">
+      <a href="/user/login">
+        <i class="fas fa-user" id="header-user-button"></i>
+      </a>
+      <p>Iniciar Sesión</p>
+    </div>
+
+    <% } %>
+
+    <div class="desktop-header-shopping-cart-button">
+      <a href="/product/carrito-compras"
+        ><i class="fas fa-shopping-cart" id="header-shopping-cart-button"></i
+      ></a>
+      <p>Mi Carrito</p>
+    </div>
+
+    <div class="desktop-header-shopping-cart-button">
+      <a href="/product/listado-productos"
+        ><i class="fas fa-clipboard-list" id="header-shopping-cart-button"></i
+      ></a>
+      <p>Listado Productos</p>
+    </div>
+  </div>
+
+  <div class="header-nav-bar-navigation">
+    <ul>
+      <div class="header-link-container">
+        <ul>
+          <li>
+            <a href="/product/celulares"
+              ><i class="fas fa-mobile"></i> Celulares</a
+            >
+            <a href="/product/laptops"><i class="fas fa-laptop"></i> Laptops</a>
+            <a href="/product/tablets"
+              ><i class="fas fa-tablet-alt"></i> Tablets</a
+            >
+            <a href="/product/gamer"><i class="fas fa-gamepad"></i> Gamer</a>
+            <a href="/product/audio"><i class="fas fa-headphones"></i> Audio</a>
+            <a href="/product/accesorios"
+              ><i class="fas fa-keyboard"></i> Accesorios</a
+            >
+          </li>
+        </ul>
+      </div>
+    </ul>
+  </div>
+</header>

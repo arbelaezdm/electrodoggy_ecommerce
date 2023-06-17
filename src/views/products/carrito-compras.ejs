@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ======== HEAD =================== -->
+<%- include('../partials/head.ejs') %>
+
+  <body>
+    
+    <!-- ===== START OF HEADER  ====== -->
+    <%- include('../partials/header.ejs') %>
+    <!-- ===== END OF HEADER ====== -->
+
+    <main class="carrito-main">
+      <h3 class="miCarrito">Mi carrito de compras</h3>
+      
+      <hr class="carrito-linea" >
+
+<!-------------------------- Seccion Productos --------------------------->
+      <div class="carritoPrueba">
+    <section class="carrito-totalProductos">
+
+      <article class="carrito-producto">
+        <img src="/images/imgMuestras/imgsProd/producto3.jpg" alt="producto1" class="carrito-imgProd">
+      <div class="carrito-tacho">
+        <i class="fa-regular fa-trash-can"></i>
+      </div>
+      <div class="carrito-textoProd">
+        <p class="carrito-marca">Nintendo</p>
+        <h4 class="carrito-nombre">Nintendo Switch 32GB Standard</h4>
+      </div>
+      
+      <div class="carrito-precioCant">
+        <div class="carrito-cantidad">
+          <button class="carrito-menos"> - </button>
+          <input type="number" class="carrito-agregandoProd" value="1"> 
+          <button class="carrito-mas"> + </button>
+        </div>
+        
+      <div class="carrito-montosProd">
+        <h6 class="carrito-sinDescuento">S/6,000.00</h6>
+        <h3 class="carrito-conDescuento">S/4,298.00</h3>
+      </div>
+      </div>
+      
+      </article>
+
+      <hr class="carrito-linea" >
+
+      <article class="carrito-producto">
+        <img src="/images/imgMuestras/imgsProd/apple.png" alt="producto1" class="carrito-imgProd">
+      <div class="carrito-tacho">
+        <i class="fa-regular fa-trash-can"></i>
+      </div>
+      <div class="carrito-textoProd">
+        <p class="carrito-marca">Apple</p>
+        <h4 class="carrito-nombre">Iphone</h4>
+      </div>
+      <div class="carrito-precioCant">
+      <div class="carrito-cantidad">
+        <button class="carrito-menos"> - </button>
+        <input type="number" class="carrito-agregandoProd" value="1"> 
+        
+        <button class="carrito-mas"> + </button>
+      </div>
+
+      <div class="carrito-montosProd">
+        <h6 class="carrito-sinDescuento">S/9,000.00</h6>
+        <h3 class="carrito-conDescuento">S/7,648.00</h3>
+      </div>
+      </div>
+      </article>
+
+    </section>
+
+    <hr class="carrito-lineaProd" >
+
+<!---------------------- Seccion Resumen de Compra ------------------------>
+    <div class="carritoAyuda">
+    <section class="carrito-totalesCompra">
+
+      <article class="carrito-resumen">
+        <h3 class="carrito-resumenCompra">Resumen de la compra</h3>
+        <div class="carrito-resumenTexto">
+        <h4 class="carrito-subtotalTexto">Subtotal</h4>
+        <h4 class="carrito-subtotal">S/11,946</h4>
+      </div>
+      <div class="carrito-resumenTexto">
+        <h4 class="carrito-costoEnvio">Costo de envío</h4>
+        <h4 class="carrito-totalEnvio">Gratis</h4>
+      </div>
+      </article>
+
+      <hr class="carrito-linea" >
+
+      <article class="carrito-total">
+
+        <h3 class="carrito-totalTexto">Total</h3>
+        <h3 class="carrito-totalPrecio">S/11,946</h3>
+
+      </article>
+
+    </section>
+  
+
+    <hr class="carrito-linea" >
+
+    <!-------------------------- Seccion Finalización --------------------------->
+
+    <section class="carrito-finalizar">
+      <article class="carrito-botonesFin">
+
+        <button type="submit" class="carrito-finalizarCompra">Finalizar Compra</button>
+
+        <a href="/"><button type="submit" class="carrito-seguirComprando">Seguir Comprando</button></a>
+        
+      </div>
+      </article>
+    </div>
+
+      <hr class="carrito-linea" >
+
+
+      <article class="carrito-tarjetas">
+        <p class="carrito-tarjetaTexto">Paga Seguro</p>
+
+        <div class="carrito-tarjetasIconos">
+        <i class="fa-brands fa-cc-visa" id="carrito-visa"></i>
+        <i class="fa-brands fa-cc-mastercard" id="carrito-master"></i>
+      </div>
+
+      </article>
+
+    </section>
+    </main>
+
+    <!-- ======= START OF FOOTER  ====== -->
+
+    <%- include('../partials/footer.ejs') %>
+
+    <!-- ===== END OF FOOTER  ====== -->
+  </body>
+</html>

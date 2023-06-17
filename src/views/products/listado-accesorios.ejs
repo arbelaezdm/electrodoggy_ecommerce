@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- ======== HEAD =================== -->
+  <%- include('../partials/head.ejs') %>
+  <body>
+
+
+    <!-- ===== HEADER  ================= -->
+    <%- include('../partials/header.ejs') %>
+
+
+    <section class="home-todo-vitrinas">
+     
+      <div class="home-titulo">
+        <h4>Listado de Productos</h4>
+      </div>
+      
+      <div class="home-vitrinas lp-productos">
+        
+        <% products.forEach(function(product){ %> 
+        <article class="home-producto-vitrinas lp-card-producto">
+
+          <a href="/product/detalle/<%= product.id %>">
+            <% if (product.discount != 0) { %>    
+          <div class="home-descuento-vitrinas">
+            <h5><%= product.discount %> % </h5>
+          </div>
+          <% } %>
+
+          <img
+            src="/images/productos/<%= product.image %>"
+            class="home-imagenes-vitrinas lp-imagen-producto"
+          />
+          <div class="home-textos-vitrinas">  
+            <h5><%= product.brand %></h5>
+            <p><%= product.name %></p>
+            <% if (product.offerPrice == 0) { %>
+              <div class="precio-sin-descuento">
+              <br>
+              <h3>S/<%= product.regularPrice %></h3>
+            </div>
+
+            <% }else{ %>
+            <h6 style="text-decoration:line-through ;">S/<%= product.regularPrice %></h6>
+            <h3>S/<%= product.offerPrice %></h3>
+          </div>
+          <% } %> 
+        
+        </article>
+      </a>
+        <% }) %>
+
+     </div>
+   
+    </section>
+
+    <!-- ======= FOOTER  ====== -->
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

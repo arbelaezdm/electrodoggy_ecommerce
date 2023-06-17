@@ -1,0 +1,52 @@
+li{
+    font-size: 16px;
+    font-family: poppins;
+    list-style: none;
+    text-decoration: none;
+    box-shadow: none;
+    color: #414AF2;
+    padding-bottom: 1rem;
+  }
+  
+ul{
+    text-decoration: none;
+    line-height: 30px;
+    background-color: aliceblue;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0;
+    margin-bottom: 0;
+
+  }
+  
+i{
+    margin-right: 1rem;
+    color: #414AF2
+  }
+  
+li span {
+    color: #414AF2;
+    text-decoration-line: none;
+    box-shadow: none;
+  }
+
+.link{
+  text-decoration: none;
+}
+
+/* Breakpoints */
+  
+    /* Tablets */
+  
+    @media(min-width:769px){
+        ul{
+            position:fixed;
+            z-index: 1;
+            background-color: aliceblue;
+            height: 100vh;
+            width: 18rem;
+        }
+      }

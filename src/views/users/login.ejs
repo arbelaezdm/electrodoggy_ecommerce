@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- ======== HEAD =================== -->
+  <%- include('../partials/head.ejs') %>
+
+  <body>
+    <!-- ===== HEADER  ================= -->
+    <%- include('../partials/header.ejs') %>
+    <!-- ===== LOGIN FORM ====== -->
+    <div class="lg-lg-login-form-container">
+      <h3 class="lg-login-label">Iniciar sesión</h3>
+
+      <form
+        action="/user/login"
+        method="POST"
+        name="lg-login-form"
+        class="lg-login-form"
+        enctype="multipart/form-data"
+        id="login-form-validation"
+      >
+        <!-- ================ EMAIL INPUT ============================== -->
+        <input
+          type="text"
+          placeholder="Correo electrónico"
+          name="email"
+          class="lg-login-input-text"
+          id="input-mail-login"
+          value="<%= locals.oldData ? oldData.email : null %>"
+        />
+
+        <div class="div-errors">
+          <p class="input-login-email-error"></p>
+          <p class="input-login-email-type-error"></p>
+        </div>
+
+        <!-- locals.error is a property is an object that contains response local variables scoped 
+          to the request and because of this, it is only available to the view(s) rendered during 
+          that request/response cycle (if any). -->
+        <% if (locals.errors && errors.email) { %>
+        <div class="register-errors"><%= errors.email.msg %></div>
+        <% } %>
+
+        <!-- ================ PASSWORD INPUT ============================== -->
+        <div class="container-eye-login">
+          <input
+            id="input-login-password"
+            type="password"
+            placeholder="Contraseña"
+            name="password"
+            class="lg-login-input-text"
+          />
+          <span class="eye-icon"
+            ><i class="fa-solid fa-eye-slash" id="close-eye"></i
+          ></span>
+        </div>
+
+        <!-- DIV FOR EMPTY PASSWORD -->
+        <div class="div-errors">
+          <p class="input-login-password-error"></p>
+          <p class="input-login-password-character-error"></p>
+        </div>
+
+        <% if (locals.errors && errors.password) { %>
+        <div class="register-errors"><%= errors.password.msg %></div>
+        <% } %> <% if (locals.errors && errors.invalidPassword) { %>
+        <div class="register-errors"><%= errors.invalidPassword %></div>
+        <% } %>
+
+        <!-- ================ REMEMBER INPUT ============================== -->
+        <label for="terminos" class="login-boundarie-label">
+          <input
+            type="checkbox"
+            name="rememberUser"
+            id="terminos"
+            class="lg-rg-boundaries"
+          />
+          Recuerdame</label
+        >
+
+        <!-- ================ FORM BUTTON ============================== -->
+        <button type="submit" class="lg-login-button">Iniciar sesión</button>
+        <a href="#resetearContraseña" class="lg-password-reset"
+          >Olvidaste tu contraseña</a
+        >
+      </form>
+    </div>
+
+    <div class="lg-remember-login">
+      <label
+        >¿No tienes cuenta?
+        <a href="./register">Registrate</a>
+      </label>
+    </div>
+
+    <!-- ======= FOOTER  ====== -->
+    <%- include('../partials/footer.ejs') %>
+    <script src="/javascript/eye.js"></script>
+  </body>
+</html>

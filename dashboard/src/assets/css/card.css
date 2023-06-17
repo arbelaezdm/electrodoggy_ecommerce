@@ -1,0 +1,21 @@
+.card{
+    display: flex;
+    align-items: flex-start;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow:1px 6px 14px #E6E7EC;
+    width: 21rem;
+    border-left: #FF4F00 solid 6px;
+}
+
+.card h3 {
+    padding-left: 2rem;
+    color: #040740;
+}
+
+.card h4 {
+    padding-left: 2rem;
+    color: #040740;
+}
