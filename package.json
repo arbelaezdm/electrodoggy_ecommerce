@@ -1,9 +1,9 @@
 {
-  "homepage": "https://github.com/MPasqui95/grupo_7_TechShop#readme",
-  "name": "grupo_7_techshop",
+  "homepage": "https://github.com/arbelaezdm/electrodoggy_ecommerce/src/views/index.ejs",
+  "name": "electrodoggy",
   "version": "1.0.0",
   "description": "ElectroDoggy es una e-commerce de venta de productos tecnológicos de diversas índoles. Abarcamos todo lo que refiere al área de celulares, tablets, laptops, accesorios para la computadora, así como también audio y gaming.",
-  "main": "app.js",
+  "main": "app.js", 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
@@ -13,13 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MPasqui95/grupo_7_TechShop.git"
+    "url": "git+https://github.com/arbelaezdm/electrodoggy_ecommerce.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MPasqui95/grupo_7_TechShop/issues"
+    "url": "https://github.com/arbelaezdm/electrodoggy_ecommerce/issues"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
