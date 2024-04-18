@@ -54,6 +54,7 @@ const apiProduct = require("./src/routes/api/apiProductsRoutes")
 // instalado y configurado ejs
 app.set("view engine", "ejs");
 app.set ("views", "./src/views")
+// app.set ("views", "./public/views")
 
 
 //====== MIDDLEAWARES 
